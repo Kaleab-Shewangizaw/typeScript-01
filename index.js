@@ -5,7 +5,7 @@ const menu = [
   {name: "Veggie", price: 9}
 ]
 
-const cashInRegister = 100
+let cashInRegister = 100
 const orderQueue = []
 
 // first challenge
@@ -23,4 +23,19 @@ const addNewPizza =(pizzaObj) =>{
 addNewPizza({name: 'somePizza', price: 5})
 
 
+//second challenge
 
+/* write another utility function, placeOrder, that takes a pizza name parameter and 
+1. finds that pizza object in the menu,
+2. adds the income to the cashInRegister,
+3. pushes a new "order object" to the orderQueue
+4. returns the mew order object  */
+
+const placeOrder = (pizzaName) =>{
+ const thePizza = menu.filter((pizza) => pizza.name === pizzaName)[0]
+ cashInRegister = cashInRegister + thePizza.price
+ orderQueue.push(thePizza)
+ console.log(thePizza)
+}
+
+placeOrder("Veggie")
